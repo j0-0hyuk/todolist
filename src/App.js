@@ -1,23 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import styles from "./App.module.css";
 
 function App() {
+  const [value, setValue] = useState("");
+  const [toDos, setToDos] = useState([]);
+
+  const onValueChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    setToDos([
+      ...toDos,
+      {
+        text: value,
+        checked: false,
+      },
+    ]);
+    setValue("");
+  };
+
+  const onDeleteClick = (e) => {
+    const id = parseInt(e.target.parentElement.id);
+    setToDos(toDos.filter((toDo, index) => index !== id));
+  };
+
+  const onCheckClick = (e) => {
+    const id = parseInt(e.target.parentElement.id);
+    setToDos(
+      toDos.map((toDo, index) =>
+        index === id ? { text: toDo.text, checked: !toDo.checked } : toDo
+      )
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <h1>What should I do?</h1>
+        <form onSubmit={onFormSubmit}>
+          <input
+            type="text"
+            placeholder="I should do..."
+            value={value}
+            onChange={onValueChange}
+            required
+          />
+          <button className={styles.create_button}>+</button>
+        </form>
+        <ul className={styles.ul}>
+          {toDos.map((toDo, index) => (
+            <li key={index} id={index}>
+              <button onClick={onCheckClick}>
+                {toDo.checked ? "✅" : "⬜"}
+              </button>
+              <span
+                className={`${styles.li_content} ${
+                  toDo.checked ? styles.line_through : ""
+                }`}
+              >
+                {toDo.text}
+              </span>
+              <button onClick={onDeleteClick}>❌</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
