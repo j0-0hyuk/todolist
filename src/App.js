@@ -57,6 +57,7 @@ function App() {
                 text={toDo.text}
                 checked={toDo.checked}
                 onCheckClick={onCheckClick}
+                onDeleteClick={onDeleteClick}
               />
             </li>
           ))}
