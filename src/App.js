@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./App.module.css";
+import ToDoInput from "./components/ToDoInput";
 import ListItem from "./components/ListItem";
 
 function App() {
@@ -40,16 +41,11 @@ function App() {
     <div className={styles.container}>
       <div className={styles.content}>
         <h1>What should I do?</h1>
-        <form onSubmit={onFormSubmit}>
-          <input
-            type="text"
-            placeholder="I should do..."
-            value={value}
-            onChange={onValueChange}
-            required
-          />
-          <button className={styles.create_button}>+</button>
-        </form>
+        <ToDoInput
+          value={value}
+          onFormSubmit={onFormSubmit}
+          onValueChange={onValueChange}
+        />
         <ul className={styles.ul}>
           {toDos.map((toDo, index) => (
             <li key={index} id={index}>
