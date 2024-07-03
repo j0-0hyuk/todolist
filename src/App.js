@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./App.module.css";
+import ListItem from "./components/ListItem";
 
 function App() {
   const [value, setValue] = useState("");
@@ -52,17 +53,11 @@ function App() {
         <ul className={styles.ul}>
           {toDos.map((toDo, index) => (
             <li key={index} id={index}>
-              <button onClick={onCheckClick}>
-                {toDo.checked ? "✅" : "⬜"}
-              </button>
-              <span
-                className={`${styles.li_content} ${
-                  toDo.checked ? styles.line_through : ""
-                }`}
-              >
-                {toDo.text}
-              </span>
-              <button onClick={onDeleteClick}>❌</button>
+              <ListItem
+                text={toDo.text}
+                checked={toDo.checked}
+                onCheckClick={onCheckClick}
+              />
             </li>
           ))}
         </ul>

@@ -1,0 +1,13 @@
+.todo_content {
+  width: 100%;
+  margin: 0 10px;
+}
+
+.update_button {
+  margin-right: 5px;
+  transform: scaleX(-1);
+}
+
+.line_through {
+  text-decoration: line-through;
+}
