@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./App.module.css";
 import ToDoInput from "./components/ToDoInput";
-import ToDoListItem from "./components/ToDoListItem";
+import ToDoList from "./components/ToDoList";
 
 function App() {
   const [value, setValue] = useState("");
@@ -38,28 +38,23 @@ function App() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <h1>What should I do?</h1>
-        <ToDoInput
-          value={value}
-          onFormSubmit={onFormSubmit}
-          onValueChange={onValueChange}
-        />
-        <ul className={styles.ul}>
-          {toDos.map((toDo, index) => (
-            <li key={index} id={index}>
-              <ToDoListItem
-                text={toDo.text}
-                checked={toDo.checked}
-                onCheckClick={onCheckClick}
-                onDeleteClick={onDeleteClick}
-              />
-            </li>
-          ))}
-        </ul>
+    <>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <h1>What should I do?</h1>
+          <ToDoInput
+            value={value}
+            onFormSubmit={onFormSubmit}
+            onValueChange={onValueChange}
+          />
+          <ToDoList
+            toDos={toDos}
+            onCheckClick={onCheckClick}
+            onDeleteClick={onDeleteClick}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
