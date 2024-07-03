@@ -1,6 +1,6 @@
-import styles from "./ListItem.module.css";
+import styles from "./ToDoListItem.module.css";
 
-function ListItem({ text, checked, onCheckClick, onDeleteClick }) {
+function ToDoListItem({ text, checked, onCheckClick, onDeleteClick }) {
   return (
     <>
       <button onClick={onCheckClick}>{checked ? "✅" : "⬜"}</button>
@@ -17,4 +17,4 @@ function ListItem({ text, checked, onCheckClick, onDeleteClick }) {
   );
 }
 
-export default ListItem;
+export default ToDoListItem;

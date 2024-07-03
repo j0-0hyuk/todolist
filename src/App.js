@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./App.module.css";
 import ToDoInput from "./components/ToDoInput";
-import ListItem from "./components/ListItem";
+import ToDoListItem from "./components/ToDoListItem";
 
 function App() {
   const [value, setValue] = useState("");
@@ -49,7 +49,7 @@ function App() {
         <ul className={styles.ul}>
           {toDos.map((toDo, index) => (
             <li key={index} id={index}>
-              <ListItem
+              <ToDoListItem
                 text={toDo.text}
                 checked={toDo.checked}
                 onCheckClick={onCheckClick}
