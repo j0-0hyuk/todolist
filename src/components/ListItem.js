@@ -1,8 +1,8 @@
 import { useState } from "react";
-import styles from "./ToDoListItem.module.css";
-import ToDoUpdateInput from "./ToDoUpdateInput";
+import styles from "./ListItem.module.css";
+import UpdateInput from "./UpdateInput";
 
-function ToDoListItem({
+function ListItem({
   id,
   text,
   checked,
@@ -20,7 +20,7 @@ function ToDoListItem({
       <button onClick={onCheckClick}>{checked ? "✅" : "⬜"}</button>
       <span className={styles.todo_content}>
         {upInput ? (
-          <ToDoUpdateInput
+          <UpdateInput
             id={id}
             text={text}
             checked={checked}
@@ -40,4 +40,4 @@ function ToDoListItem({
   );
 }
 
-export default ToDoListItem;
+export default ListItem;

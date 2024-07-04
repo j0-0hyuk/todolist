@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ToDoUpdateInput({ id, text, checked, toDos, setToDos, setUpInput }) {
+function UpdateInput({ id, text, checked, toDos, setToDos, setUpInput }) {
   const [value, setValue] = useState(text);
 
   const onValueChange = (e) => {
@@ -26,4 +26,4 @@ function ToDoUpdateInput({ id, text, checked, toDos, setToDos, setUpInput }) {
   );
 }
 
-export default ToDoUpdateInput;
+export default UpdateInput;

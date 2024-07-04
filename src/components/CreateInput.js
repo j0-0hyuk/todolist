@@ -1,9 +1,10 @@
-import styles from "./ToDoInput.module.css";
+import styles from "./CreateInput.module.css";
 
-function ToDoInput({ value, onFormSubmit, onValueChange }) {
+function CreateInput({ value, onFormSubmit, onValueChange }) {
   return (
     <form onSubmit={onFormSubmit}>
       <input
+        className={styles.create_input}
         type="text"
         placeholder="I should do..."
         value={value}
@@ -15,4 +16,4 @@ function ToDoInput({ value, onFormSubmit, onValueChange }) {
   );
 }
 
-export default ToDoInput;
+export default CreateInput;

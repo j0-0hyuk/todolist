@@ -1,11 +1,11 @@
-import ToDoListItem from "./ToDoListItem";
+import ListItem from "./ListItem";
 
-function ToDoList({ toDos, setToDos, onCheckClick, onDeleteClick }) {
+function List({ toDos, setToDos, onCheckClick, onDeleteClick }) {
   return (
     <ul>
       {toDos.map((toDo, index) => (
         <li key={index} id={index}>
-          <ToDoListItem
+          <ListItem
             id={index}
             text={toDo.text}
             checked={toDo.checked}
@@ -20,4 +20,4 @@ function ToDoList({ toDos, setToDos, onCheckClick, onDeleteClick }) {
   );
 }
 
-export default ToDoList;
+export default List;

@@ -31,14 +31,6 @@ form {
   margin-bottom: 5px;
 }
 
-input {
-  width: 85%;
-  margin-right: 5px;
-  padding: 5px;
-  padding-left: 5px;
-  font-size: 22px;
-}
-
 button {
   border: none;
   border-radius: 5px;

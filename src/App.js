@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./App.module.css";
-import ToDoInput from "./components/ToDoInput";
-import ToDoList from "./components/ToDoList";
+import Input from "./components/CreateInput";
+import List from "./components/List";
 
 function App() {
   const [value, setValue] = useState("");
@@ -41,12 +41,12 @@ function App() {
     <div className={styles.container}>
       <div className={styles.content}>
         <h1>What should I do?</h1>
-        <ToDoInput
+        <Input
           value={value}
           onFormSubmit={onFormSubmit}
           onValueChange={onValueChange}
         />
-        <ToDoList
+        <List
           toDos={toDos}
           setToDos={setToDos}
           onCheckClick={onCheckClick}
