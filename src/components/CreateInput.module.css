@@ -1,12 +1,20 @@
-.create_input {
+.create_form {
+  display: flex;
+  justify-content: space-between;
+  min-height: 30px;
+  margin-bottom: 5px;
+}
+
+.create_form > input {
   width: 85%;
   margin-right: 5px;
   padding: 5px;
   padding-left: 5px;
   font-size: 22px;
+  border-radius: 5px;
 }
 
-.create_button {
+.create_form > button {
   min-width: 40px;
   min-height: inherit;
   background-color: #1885f2;

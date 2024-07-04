@@ -16,7 +16,7 @@ function ListItem({
     setUpInput(!upInput);
   };
   return (
-    <>
+    <div className={styles.list_item}>
       <button onClick={onCheckClick}>{checked ? "✅" : "⬜"}</button>
       <span className={styles.todo_content}>
         {upInput ? (
@@ -36,7 +36,7 @@ function ListItem({
         ✏️
       </button>
       <button onClick={onDeleteClick}>❌</button>
-    </>
+    </div>
   );
 }
 

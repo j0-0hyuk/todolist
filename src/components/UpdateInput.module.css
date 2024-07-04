@@ -1,0 +1,18 @@
+.update_form {
+  margin: 0;
+  display: flex;
+}
+
+.update_form > input {
+  width: 100%;
+  border-radius: 5px;
+  border-color: #1885f2;
+}
+
+.update_form > button {
+  background-color: #1885f2;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 15px;
+}

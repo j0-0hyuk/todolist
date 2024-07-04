@@ -1,8 +1,9 @@
 import ListItem from "./ListItem";
+import styles from "./List.module.css";
 
 function List({ toDos, setToDos, onCheckClick, onDeleteClick }) {
   return (
-    <ul>
+    <ul className={styles.list}>
       {toDos.map((toDo, index) => (
         <li key={index} id={index}>
           <ListItem

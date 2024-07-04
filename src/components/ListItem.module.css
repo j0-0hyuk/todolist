@@ -1,3 +1,15 @@
+.list_item {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.list_item button {
+  font-size: 20px;
+  min-height: 30px;
+}
+
 .todo_content {
   width: 100%;
   margin: 0 10px;

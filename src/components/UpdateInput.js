@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./UpdateInput.module.css";
 
 function UpdateInput({ id, text, checked, toDos, setToDos, setUpInput }) {
   const [value, setValue] = useState(text);
@@ -17,12 +18,10 @@ function UpdateInput({ id, text, checked, toDos, setToDos, setUpInput }) {
     setUpInput(false);
   };
   return (
-    <>
-      <form onSubmit={onUpdateSubmit}>
-        <input type="text" value={value} onChange={onValueChange} />
-        <button>Update</button>
-      </form>
-    </>
+    <form className={styles.update_form} onSubmit={onUpdateSubmit}>
+      <input type="text" value={value} onChange={onValueChange} />
+      <button>Update</button>
+    </form>
   );
 }
 
