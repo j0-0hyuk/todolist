@@ -38,23 +38,22 @@ function App() {
   };
 
   return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <h1>What should I do?</h1>
-          <ToDoInput
-            value={value}
-            onFormSubmit={onFormSubmit}
-            onValueChange={onValueChange}
-          />
-          <ToDoList
-            toDos={toDos}
-            onCheckClick={onCheckClick}
-            onDeleteClick={onDeleteClick}
-          />
-        </div>
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <h1>What should I do?</h1>
+        <ToDoInput
+          value={value}
+          onFormSubmit={onFormSubmit}
+          onValueChange={onValueChange}
+        />
+        <ToDoList
+          toDos={toDos}
+          setToDos={setToDos}
+          onCheckClick={onCheckClick}
+          onDeleteClick={onDeleteClick}
+        />
       </div>
-    </>
+    </div>
   );
 }
 
