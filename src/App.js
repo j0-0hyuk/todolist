@@ -24,12 +24,12 @@ function App() {
   };
 
   const onDeleteClick = (e) => {
-    const id = parseInt(e.target.parentElement.id);
+    const id = parseInt(e.target.parentElement.parentElement.id);
     setToDos(toDos.filter((toDo, index) => index !== id));
   };
 
   const onCheckClick = (e) => {
-    const id = parseInt(e.target.parentElement.id);
+    const id = parseInt(e.target.parentElement.parentElement.id);
     setToDos(
       toDos.map((toDo, index) =>
         index === id ? { text: toDo.text, checked: !toDo.checked } : toDo
