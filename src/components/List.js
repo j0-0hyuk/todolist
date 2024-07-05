@@ -3,8 +3,10 @@ import styles from "./List.module.css";
 
 function List({ toDos, setToDos }) {
   const onDeleteClick = (e) => {
-    const id = parseInt(e.target.parentElement.parentElement.id);
-    setToDos(toDos.filter((toDo, index) => index !== id));
+    if (window.confirm("할일을 삭제하시겠습니까?")) {
+      const id = parseInt(e.target.parentElement.parentElement.id);
+      setToDos(toDos.filter((toDo, index) => index !== id));
+    }
   };
 
   const onCheckClick = (e) => {
