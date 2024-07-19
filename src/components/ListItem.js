@@ -9,7 +9,7 @@ function ListItem({ id, toDo, toDos, setToDos }) {
   };
 
   const onDeleteClick = (e) => {
-    if (window.confirm("할일을 삭제하시겠습니까?")) {
+    if (window.confirm("이 할일을 삭제하시겠습니까?")) {
       const id = parseInt(e.target.parentElement.parentElement.id);
       setToDos(toDos.filter((_, index) => index !== id));
     }
